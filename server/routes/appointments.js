@@ -1,5 +1,5 @@
 import express from "express";
-import Appointment from "../models/appointment"; // Ensure the file extension is added
+import Appointment from "../models/appointment/js"; // Ensure the file extension is added
 
 const router = express.Router();
 

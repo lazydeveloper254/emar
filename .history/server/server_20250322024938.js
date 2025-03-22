@@ -36,15 +36,15 @@ app.use("/api/auth", authRoutes);
 app.use("/api/patients", patientsRoutes);
 app.use("/api/appointments", appointmentsRoutes);
 
-app.use(express.static(path.join(__dirname, "/emar/out")));
+// app.use(express.static(path.join(__dirname, "/emar/.next/server/app")));
 
-//render client any path
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "/emar/out/index.html"))
-);
+// //render client any path
+// app.get("*", (req, res) =>
+//   res.sendFile(path.join(__dirname, "/emar/.next/server/app/index.html"))
+// );
 
-// app.use(express.static(path.join(__dirname, "/emar/out")));
-// app.all("*", (req, res) => handle(req, res));
+app.use(express.static(path.join(__dirname, "/emar/.next/static")));
+app.all("*", (req, res) => handle(req, res));
 app.get("/", (req, res) => {
   res.send("Emar system API is running");
 });
